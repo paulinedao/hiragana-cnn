@@ -27,11 +27,27 @@ Writing the characters involves a series of strokes that goes from top to bottom
 
 
 ## Convolutional Neural Network <a name= "CNN"></a>
+**Data Augmentation**
+Data augmentation implies resizing, rotating, scaling, using a grayscale, then converting the image into a Pytorch tensor to make it suitable for the model. Finally the images are  all normalized to have the same pizel intensity.
+
+**Load images and stratify train/test split**
+The dataset was split into train and validation sets usinng a stratified method to have each class represented and a seed to make it reproducible. In that case, this is a multiclass image classification task.
+the train and validation sets were created using `DataLoader` and shuffling in the training set to have a random mix order of the characters and avoid overfitting.
+
+**Model Definition**
+The model is a convolutional neural network that takes a 64*64 grayscale image as input. It has 3 convolutional blocks and 46 classes. The tensor shape after the convolutional layers is 128 * 8 * 8, which is tthe total number of features taken as input neurons. 512 corresponds to the number of output neurons. The fully connected layer uses `Sequential` and `ReLU`, combining the different features and classifying the character into one of the 46 Hiragana classes. The final output layer is thus 46, the number of classes.
+
+
+**Training**
+During the training phase and the 15 epochs, the model passes through the training set to learn. The batch size, 32 images, is set at the beginning of the notebook. During the forward pass, one image produces 46 scores for each of the classes. The loss is computed usinng the `CrossEntropyLoss` and the Adam optimizer is used to adjust weights for predictions and is also set at the beginning of the notebook.
+
+
+**Prediction**
 
 ## Installation <a name= "installation"></a>
 ### Pre-requisites
 
-To run the notebook you need an environment with `torch` and ` tqdm`.
+To run the notebook you need an environment with `torch` and `tqdm`.
 
 
 
