@@ -64,9 +64,24 @@ In the `predict_image` function, an image from the validation set or a new image
 To run the notebook you need an environment with `torch`, `tqdm`, `scikit-learn` and `matplotlib`.
 
 
+For the app you can use uv:
+
+```
+uv init
+uv venv --python 3.11
+uv pip install torch==2.2.2 torchvision==0.17.2
+uv pip install flask dash dash-bootstrap-components
+uv pip install pillow
+uv pip install "numpy<2"
+```
+
+
 
 ## Usage <a name= "usage"></a>
 
+```
+uv run app.py
+```
 
 ## Author <a name= "author"></a>
 
