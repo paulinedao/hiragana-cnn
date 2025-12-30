@@ -52,10 +52,16 @@ During the training phase and the 15 epochs, the model passes through the traini
 The `predict_image` function is using ` val_transform`, processing the images without augmentation (rotating, shifting etc...) since augmentation is only needed in the learning phase.
 In the `predict_image` function, an image from the validation set or a new image of a hiragana can be used.
 
+
+<p align="center">
+  <img src="readme-images/confusion-matrix.png" alt="confusion-matrix" width="600"/>
+</p>
+
+
 ## Installation <a name= "installation"></a>
 ### Pre-requisites
 
-To run the notebook you need an environment with `torch` and `tqdm`.
+To run the notebook you need an environment with `torch`, `tqdm`, `scikit-learn` and `matplotlib`.
 
 
 
