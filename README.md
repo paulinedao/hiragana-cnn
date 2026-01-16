@@ -2,6 +2,7 @@
 
 ## Table of Contents
 - [About](#about)
+- [Goal](#goal)
 - [Convolutional Neural Network](#convolutional-neural-network)
 - [Installation](#installation)
 - [Usage](#usage)
@@ -11,7 +12,7 @@
 Learning Japanese opens the door to a rich language and culture shaped by unique characters. Japanese uses three writing systems—hiragana, katakana, and kanji—each with its own role. Together they form the foundation for learning Japanese.
 
 
-There are 46 hiragana and the dataset is composed of 100 images of the 46 hiraganas. 
+There are 46 hiragana and the dataset is composed of 100 images of each of the 46 hiraganas. 
 
 
 <p align="center">
@@ -26,10 +27,13 @@ Writing the characters involves a series of strokes that goes from top to bottom
 </p>
 
 
+## Goal <a name= "goal"></a>
+The goal of this project is to enable the user to identify hiraganas by uploading images in the app, displaying a prediciton score and the romaji transcription, allowing non-japanese readers to understand how it should be pronounced.
+
 ## Convolutional Neural Network <a name= "CNN"></a>
 **Data Augmentation**
 
-Data augmentation implies resizing, rotating, scaling, using a grayscale, then converting the image into a Pytorch tensor to make it suitable for the model. Finally the images are  all normalized to have the same pizel intensity.
+Data augmentation implies resizing, rotating, scaling, using a grayscale, then converting the image into a Pytorch tensor to make it suitable for the model. Finally the images are all normalized to have the same pixel intensity.
 
 **Load images and stratify train/test split**
 
@@ -82,6 +86,12 @@ uv pip install "numpy<2"
 ```
 uv run app.py
 ```
+After choosing an image to predict, you should see this:
+<p align="center">
+  <img src="readme-images/frontend.png" alt="frontend" width="600"/>
+</p>
+
+The prediction returns a confidence value showing how sure the model is of the prediction and corresponding to the highest score for one of the 46 hiraganas.
 
 ## Author <a name= "author"></a>
 
